@@ -12,11 +12,13 @@ namespace newProject.Areas.Identity.Data
     {
         public ApplicationUser() 
         {
-            Posts = new HashSet<Post>();
+            
         }
         public string Name {get;set;}
         public string Country {get;set;}
         public string City {get;set;}
-        public ICollection<Post> Posts {get;set;}
+        
+        
+
     }
 }

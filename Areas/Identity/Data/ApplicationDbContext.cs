@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using newProject.Areas.Identity.Data;
+using newProject.Models;
 
 namespace newProject.Areas.Identity.Data
 {
@@ -16,12 +17,27 @@ namespace newProject.Areas.Identity.Data
         {
         }
 
-        protected override void OnModelCreating(ModelBuilder builder)
-        {
-            base.OnModelCreating(builder);
-            // Customize the ASP.NET Identity model and override the defaults if needed.
-            // For example, you can rename the ASP.NET Identity table names and more.
-            // Add your customizations after calling base.OnModelCreating(builder);
-        }
+        public DbSet<Chef> Chefs{get;set;}
+        public DbSet<Meal> Meals{get;set;}
+        public DbSet<Recipe> Recipes{get;set;}
+        public DbSet<Ingredient> Ingredients{get;set;}
+        public DbSet<RecipeIngredient> RecipeIngredients{get;set; }
+
+
+      
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        base.OnModelCreating(modelBuilder);
+        modelBuilder.Entity<RecipeIngredient>()
+            .HasKey(ri => new { ri.RecipeID, ri.IngredientID });
+        modelBuilder.Entity<RecipeIngredient>()
+            .HasOne(ri => ri.Recipe)
+            .WithMany(r => r.RecipeIngredients)
+            .HasForeignKey(ri => ri.RecipeID);
+        modelBuilder.Entity<RecipeIngredient>()
+            .HasOne(ri => ri.Ingredient)
+            .WithMany(i => i.RecipeIngredients)
+            .HasForeignKey(ri => ri.IngredientID);
+    }
     }
 }

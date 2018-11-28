@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using newProject.Areas.Identity.Data;
 
 namespace newProject.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20181127115640_GenerateAllTables")]
+    partial class GenerateAllTables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -133,12 +135,20 @@ namespace newProject.Migrations
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<string>("Academy");
+
                     b.Property<int>("AccessFailedCount");
+
+                    b.Property<int>("Age");
+
+                    b.Property<string>("ChannelAffilitations");
 
                     b.Property<string>("City");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken();
+
+                    b.Property<string>("CookingShowName");
 
                     b.Property<string>("Country");
 
@@ -149,6 +159,8 @@ namespace newProject.Migrations
                         .HasMaxLength(256);
 
                     b.Property<bool>("EmailConfirmed");
+
+                    b.Property<string>("ImageLink");
 
                     b.Property<bool>("LockoutEnabled");
 
@@ -175,6 +187,10 @@ namespace newProject.Migrations
                     b.Property<string>("UserName")
                         .HasMaxLength(256);
 
+                    b.Property<int>("YearsOfExperience");
+
+                    b.Property<string>("YouTubeChannel");
+
                     b.HasKey("Id");
 
                     b.HasIndex("NormalizedEmail")
@@ -189,88 +205,11 @@ namespace newProject.Migrations
                     b.HasDiscriminator<string>("Discriminator").HasValue("ApplicationUser");
                 });
 
-            modelBuilder.Entity("newProject.Models.Ingredient", b =>
-                {
-                    b.Property<int>("IngredientID")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("CategoryName");
-
-                    b.Property<string>("IngredientName");
-
-                    b.Property<string>("QuantityMetric");
-
-                    b.HasKey("IngredientID");
-
-                    b.ToTable("Ingredients");
-                });
-
-            modelBuilder.Entity("newProject.Models.Meal", b =>
-                {
-                    b.Property<int>("MealID")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("MealName");
-
-                    b.HasKey("MealID");
-
-                    b.ToTable("Meals");
-                });
-
-            modelBuilder.Entity("newProject.Models.Recipe", b =>
-                {
-                    b.Property<int>("RecipeID")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<float>("Avg_Cooking_Time");
-
-                    b.Property<string>("Instructions");
-
-                    b.Property<int?>("MealID");
-
-                    b.Property<string>("Origin_City");
-
-                    b.Property<string>("Origin_Country");
-
-                    b.Property<string>("RecipeName");
-
-                    b.HasKey("RecipeID");
-
-                    b.HasIndex("MealID");
-
-                    b.ToTable("Recipes");
-                });
-
-            modelBuilder.Entity("newProject.Models.RecipeIngredient", b =>
-                {
-                    b.Property<int>("RecipeID");
-
-                    b.Property<int>("IngredientID");
-
-                    b.HasKey("RecipeID", "IngredientID");
-
-                    b.HasIndex("IngredientID");
-
-                    b.ToTable("RecipeIngredients");
-                });
-
             modelBuilder.Entity("newProject.Models.Chef", b =>
                 {
                     b.HasBaseType("newProject.Areas.Identity.Data.ApplicationUser");
 
-                    b.Property<string>("Academy");
-
-                    b.Property<string>("ChannelAffilitations");
-
-                    b.Property<string>("CookingShowName");
-
                     b.Property<DateTime>("DateOfBirth");
-
-                    b.Property<string>("ImageLink");
-
-                    b.Property<int>("YearsOfExperience");
-
-                    b.Property<string>("YouTubeChannel");
 
                     b.ToTable("Chef");
 
@@ -319,26 +258,6 @@ namespace newProject.Migrations
                     b.HasOne("newProject.Areas.Identity.Data.ApplicationUser")
                         .WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("newProject.Models.Recipe", b =>
-                {
-                    b.HasOne("newProject.Models.Meal")
-                        .WithMany("Recipes")
-                        .HasForeignKey("MealID");
-                });
-
-            modelBuilder.Entity("newProject.Models.RecipeIngredient", b =>
-                {
-                    b.HasOne("newProject.Models.Ingredient", "Ingredient")
-                        .WithMany("RecipeIngredients")
-                        .HasForeignKey("IngredientID")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("newProject.Models.Recipe", "Recipe")
-                        .WithMany("RecipeIngredients")
-                        .HasForeignKey("RecipeID")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
