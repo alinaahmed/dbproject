@@ -27,6 +27,7 @@ namespace newProject.Areas.Identity.Data
       
         protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        
         base.OnModelCreating(modelBuilder);
         modelBuilder.Entity<RecipeIngredient>()
             .HasKey(ri => new { ri.RecipeID, ri.IngredientID });
