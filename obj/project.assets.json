@@ -12409,11 +12409,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/mtariq/Documents/try10/dbproject/newProject.csproj",
+      "projectUniqueName": "/home/mtariq/GitRepoTest/dbproject/newProject.csproj",
       "projectName": "newProject",
-      "projectPath": "/home/mtariq/Documents/try10/dbproject/newProject.csproj",
+      "projectPath": "/home/mtariq/GitRepoTest/dbproject/newProject.csproj",
       "packagesPath": "/home/mtariq/.nuget/packages/",
-      "outputPath": "/home/mtariq/Documents/try10/dbproject/obj/",
+      "outputPath": "/home/mtariq/GitRepoTest/dbproject/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/home/mtariq/Downloads/dotnetsdk/sdk/NuGetFallbackFolder"
