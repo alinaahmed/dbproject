@@ -1,0 +1,82 @@
+@model newProject.Models.Chef
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <h4>Create a new account.</h4>
+            <hr />
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Country"></label>
+                <input asp-for="Country" class="form-control" />
+                <span asp-validation-for="Country" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="City"></label>
+                <input asp-for="City" class="form-control" />
+                <span asp-validation-for="City" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" ></label>
+                <input asp-for="Password"   class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateOfBirth" ></label>
+                <input asp-for="DateOfBirth" type="date" class="form-control" />
+                <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Academy" ></label>
+                <input asp-for="Academy"  class="form-control" />
+                <span asp-validation-for="Academy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="YearsOfExperience" ></label>
+                <input asp-for="YearsOfExperience"  class="form-control" />
+                <span asp-validation-for="YearsOfExperience" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CookingShowName" ></label>
+                <input asp-for="CookingShowName"  class="form-control" />
+                <span asp-validation-for="CookingShowName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ChannelAffilitations" ></label>
+                <input asp-for="ChannelAffilitations"  class="form-control" />
+                <span asp-validation-for="ChannelAffilitations" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="YouTubeChannel" ></label>
+                <input asp-for="YouTubeChannel"  class="form-control" />
+                <span asp-validation-for="YouTubeChannel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageLink" ></label>
+                <input asp-for="ImageLink"  class="form-control" />
+                <span asp-validation-for="ImageLink" class="text-danger"></span>
+            </div>
+            
+            <button type="submit" class="btn btn-default">Register</button>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

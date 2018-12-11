@@ -1,11 +1,17 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using newProject.Areas.Identity.Data;
 
 namespace newProject.Models
 {
     public class Chef : ApplicationUser
     {
+        [NotMapped]
+        public string Password {get;set;}
+
+        [DataType(DataType.DateTime)]
         public DateTime DateOfBirth {get;set;}
         public string Academy{get; set;}
         public int YearsOfExperience{get; set;}
