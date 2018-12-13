@@ -58,44 +58,34 @@
 				<div class="navbar-header"> 
 				<!-- Mobile Toggle Menu Button -->
 				<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle" data-toggle="collapse" data-target="#fh5co-navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
-				<a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Reciking</a>
+				<a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">ReciKing</a>
 				</div>
 				<div id="fh5co-navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">
 						<li class="active"><a asp-area="" asp-controller="Home" asp-action="Index">Home<span class="border"></span></span></a></li>
-						<li><a asp-area="Identity" asp-page=/Account/Register ><span>Register <span class="border"></span></span></a></li>
 						<li><a asp-area="Identity" asp-page="/Account/Login" ><span>Login<span class="border"></span></span></a></li>
-						<li><a asp-area="" asp-controller="Home" asp-action="About">About<span class="border"></span></span></a></li>
-						<li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact<span class="border"></span></span></a></li>
-						<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Launch demo modal
-</button>
+						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Register</button>
+						<li><a asp-area="" asp-controller="Home" asp-action="Whatsinyourfridge">Whatsinyourfridge<span class="border"></span></span></a></li>
+						<li><a asp-area="" asp-controller="Home" asp-action="selection">selection<span class="border"></span></span></a></li>
 					</ul>
 				</div>
 			</div>
 		</nav>
 	</header>
-
-	
-
-<!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h3 class="modal-title" id="exampleModalLabel">Type of Cook</h3>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-        ...
+      <div class="modal-body" style="center">
+         <a asp-controller="Chefs" asp-action="Register"><button type="button" class="btn btn-primary" data-dismiss="modal">Chef</button></a>
+        <a href="Identity/Account/Register"> <button type="button" class="btn btn-primary" data-dismiss="modal">Muggles</button></a>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
+      
     </div>
   </div>
 </div>

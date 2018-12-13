@@ -407,3 +407,5 @@ C:/Users/DELL/Desktop/iba/5th semester/db ik/db project/31nov project/newProject
 /home/mtariq/GitRepoTest/dbproject/obj/Debug/netcoreapp2.1/newProject.pdb
 /home/mtariq/GitRepoTest/dbproject/obj/Debug/netcoreapp2.1/newProject.csproj.CopyComplete
 /home/mtariq/GitRepoTest/dbproject/obj/Debug/netcoreapp2.1/Razor/Views/Chefs/Register.g.cshtml.cs
+/home/mtariq/GitRepoTest/dbproject/obj/Debug/netcoreapp2.1/Razor/Views/Home/selection.g.cshtml.cs
+/home/mtariq/GitRepoTest/dbproject/obj/Debug/netcoreapp2.1/Razor/Views/Home/Whatsinyourfridge.g.cshtml.cs

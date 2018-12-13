@@ -1,0 +1,106 @@
+@model List<Meal>
+@{
+    ViewData["Title"] = "Whatsinyourfridge";
+}
+
+<head>
+	
+	
+	<link rel="shortcut icon" href="favicon.ico">
+
+	<link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic,700italic|Merriweather:300,400italic,300italic,400,700italic' rel='stylesheet' type='text/css'>
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="css/animate1.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="css/icomoon1.css">
+	<!-- Simple Line Icons -->
+	<link rel="stylesheet" href="css/simple-line-icons1.css">
+	<!-- Datetimepicker -->
+	<link rel="stylesheet" href="css/bootstrap-datetimepicker1.min.css">
+	<!-- Flexslider -->
+	<link rel="stylesheet" href="css/flexslider1.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="css/bootstrap1.css">
+
+	<link rel="stylesheet" href="css/style1.css">
+
+
+	<!-- Modernizr JS -->
+	<script src="js/modernizr1-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+
+	</head>
+	<body>
+
+	<h2>@ViewData["Title"]</h2>
+	
+		<div id="fh5co-menus" data-section="menu">
+			<div class="container">
+				<div class="row text-center fh5co-heading row-padded">
+					<div class="col-md-8 col-md-offset-2">
+						<h2 class="heading to-animate">Food Menu</h2>
+						<p class="sub-heading to-animate">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+					</div>
+				</div>
+				<div class="row row-padded">
+					<div class="col-md-6">
+						<div class="fh5co-food-menu to-animate-2">
+					@foreach(var meal in Model) 
+					{
+							<h2>@meal.MealName</h2>
+							<ul>
+								@foreach(var recipe in meal.Recipes)
+								{
+								<li>
+									<div class="fh5co-food-desc">
+										<figure>
+										</figure>
+										<div>
+											<h3>@recipe.RecipeName</h3>
+											<p>@recipe.Instructions</p>
+										</div>
+									</div>
+									
+								</li>
+								}
+							</ul>
+					}
+						
+						
+					</div>
+					
+				</div>
+			
+			</div>
+		</div>
+	
+	
+	<!-- jQuery -->
+	<script src="~/js/jquery1.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="~/js/jquery1.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="~/js/bootstrap1.min.js"></script>
+	<!-- Bootstrap DateTimePicker -->
+	<script src="~/js/moment1.js"></script>
+	<script src="~/js/bootstrap-datetimepicker1.min.js"></script>
+	<!-- Waypoints -->
+	<script src="~/js/jquery1.waypoints.min.js"></script>
+	<!-- Stellar Parallax -->
+	<script src="~/js/jquery1.stellar.min.js"></script>
+
+	<!-- Flexslider -->
+	<script src="~/js/jquery1.flexslider-min.js"></script>
+	<script>
+		$(function () {
+	       $('#date').datetimepicker();
+	   });
+	</script>
+	<!-- Main JS -->
+	<script src="~/js/main1.js"></script>
+
+</body>
